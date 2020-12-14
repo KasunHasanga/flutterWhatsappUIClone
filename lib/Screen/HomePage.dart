@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone_app/Screen/WhatsAppCALLS.dart';
+import 'package:whatsapp_clone_app/Screen/WhatsAppCAM.dart';
+import 'package:whatsapp_clone_app/Screen/WhatsAppCHATS.dart';
+import 'package:whatsapp_clone_app/Screen/WhatsAppSTATUS.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -39,10 +43,14 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           ],
         ),
       ),
-      body: Container(
-
-        child: Text('Home Page'),
-      ),
+        body: TabBarView(
+            controller: _tabController,
+        children: <Widget>[
+          WhatsAppCamera(),
+          WhatsAppChats(),
+          WhatsAppStatus(),
+          WhatsAppCALL()
+        ],)
     );
   }
 }
