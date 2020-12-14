@@ -25,13 +25,10 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         title: Text('WhatsApp'),
         elevation: 0.7,
 
-        leading: Row(
-          children: [
-            Icon(Icons.search,
-            color: Colors.black87,),
-            Icon(Icons.menu)
-          ],
-        ),
+        actions: [      Icon(Icons.search,
+          color: Colors.black54,),
+          SizedBox(width: 10,),
+          Icon(Icons.more_vert)],
         bottom: TabBar(
           controller: _tabController,
           indicatorColor: Colors.white,
