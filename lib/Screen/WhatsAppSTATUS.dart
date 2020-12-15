@@ -13,12 +13,14 @@ class _WhatsAppStatusState extends State<WhatsAppStatus> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+
 
         child: Column(
           
           children: [
             ListTile(
-              leading: CircleAvatar(backgroundImage: null,backgroundColor: Colors.yellow,),
+              leading: CircleAvatar(backgroundImage: NetworkImage(dummyStatusData[0].StatusURL),backgroundColor: Colors.yellow,),
               title: Text('My Status'),
               subtitle: Text('Tap to add status update'),
             ),
@@ -41,12 +43,13 @@ class _WhatsAppStatusState extends State<WhatsAppStatus> {
             ),
             SizedBox(height: 15,),
             ListView.builder(
+              physics: const NeverScrollableScrollPhysics(),
               controller: _scrollController,
                 itemCount: dummyStatusData.length,
                 shrinkWrap: true,
                 itemBuilder: (context, index) =>Column(
                   children: [
-                    Divider(height: 10,),
+
                     ListTile(
                       leading: CircleAvatar(
                         backgroundColor: Colors.green,
@@ -55,7 +58,8 @@ class _WhatsAppStatusState extends State<WhatsAppStatus> {
                       title: Text(dummyStatusData[index].name),
                       subtitle: Text(dummyStatusData[index].time),
 
-                    )
+                    ),
+                    Divider(height: 0,),
                   ],
                 ),
             ),

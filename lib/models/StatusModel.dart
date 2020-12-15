@@ -38,4 +38,10 @@ List<StatusModel> dummyStatusData=[
       time: "1:03 am",
       StatusURL: 'https://823802.smushcdn.com/1622828/wp-content/uploads/2017/10/Understanding-BPD-Emotional-Manipulation-Techniques-and-How-Treatment-Can-Help-768x512.jpg?lossy=1&strip=1&webp=1'
   ),
+  StatusModel(
+      name: 'Kasun Hasanga',
+
+      time: "11:44 pm",
+      StatusURL: 'https://ideapod.com/wp-content/uploads/2017/08/person-1.jpg'
+  ),
 ];
