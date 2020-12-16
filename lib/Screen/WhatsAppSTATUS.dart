@@ -20,7 +20,7 @@ class _WhatsAppStatusState extends State<WhatsAppStatus> {
           
           children: [
             ListTile(
-              leading: CircleAvatar(backgroundImage: NetworkImage(dummyStatusData[0].StatusURL),backgroundColor: Colors.yellow,),
+              leading: CircleAvatar(backgroundImage: NetworkImage(dummyStatusData[0].statusURL),backgroundColor: Colors.yellow,),
               title: Text('My Status'),
               subtitle: Text('Tap to add status update'),
             ),
@@ -54,7 +54,7 @@ class _WhatsAppStatusState extends State<WhatsAppStatus> {
                       leading: CircleAvatar(
                         backgroundColor: Colors.green,
                         foregroundColor: Colors.greenAccent,
-                        backgroundImage: NetworkImage(dummyStatusData[index].StatusURL),),
+                        backgroundImage: NetworkImage(dummyStatusData[index].statusURL),),
                       title: Text(dummyStatusData[index].name),
                       subtitle: Text(dummyStatusData[index].time),
 

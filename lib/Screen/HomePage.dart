@@ -3,6 +3,7 @@ import 'package:whatsapp_clone_app/Screen/WhatsAppCALLS.dart';
 import 'package:whatsapp_clone_app/Screen/WhatsAppCAM.dart';
 import 'package:whatsapp_clone_app/Screen/WhatsAppCHATS.dart';
 import 'package:whatsapp_clone_app/Screen/WhatsAppSTATUS.dart';
+import 'package:whatsapp_clone_app/models/menuListModel.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -18,6 +19,26 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     _tabController =TabController(length: 4, vsync: this,initialIndex: 1);
   }
 
+  void selectedMenu(String menuListItem){
+    if (menuListItem ==MenuList.newGroup){
+      print('New Group');
+    }
+    else if (menuListItem ==MenuList.newBroadcast){
+      print('New BroadCast');
+    }
+    else if (menuListItem ==MenuList.whatsaAppWeb){
+      print('WhatsApp Web');
+    }
+    else if (menuListItem ==MenuList.starredMsg){
+      print('Startted Message');
+    }
+    else if (menuListItem ==MenuList.setting){
+      print('Setting');
+    }
+
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,8 +48,23 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
 
         actions: [      Icon(Icons.search,
           color: Colors.black54,),
-          SizedBox(width: 10,),
-          Icon(Icons.more_vert)],
+          SizedBox(width: 5,),
+
+          PopupMenuButton<String>(
+            onSelected:selectedMenu,
+              itemBuilder: (BuildContext context){
+              return MenuList.menuListItem.map((String menuListItem){
+                return PopupMenuItem<String>(
+                  value: menuListItem,
+                    child: Text(menuListItem),
+                );
+              }).toList();
+              }
+
+          )
+        ],
+        
+        
         bottom: TabBar(
           controller: _tabController,
           indicatorColor: Colors.white,
